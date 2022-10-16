@@ -1,5 +1,3 @@
-package selection;
-
 import static util.Util.createAndFillArray;
 import static util.Util.isSorted;
 

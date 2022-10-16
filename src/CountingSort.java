@@ -1,5 +1,3 @@
-package counting;
-
 import static util.Util.*;
 
 /*

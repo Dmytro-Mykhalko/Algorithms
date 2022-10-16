@@ -2,8 +2,8 @@ import static util.Util.createAndFillArray;
 import static util.Util.isSorted;
 
 /*
- * The selection sort algorithm sorts an array by repeatedly finding the minimum element
- * (considering ascending order) from the unsorted part and putting it at the beginning.
+ * Repeatedly swapping the adjacent elements if they are in the wrong order.
+ * This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
  *
  * Time Complexity
  * O(n^2) -> O(n^2)
@@ -15,15 +15,13 @@ public class BubbleSort {
 
     public static void sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
-            int minIndex = i;
-
-            for (int j = i + 1; j < arr.length; j++)
-                if (arr[j] < arr[minIndex])
-                    minIndex = j;
-
-            int temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
     }
 
